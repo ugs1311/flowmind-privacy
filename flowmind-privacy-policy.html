@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FlowMind — Privacy Policy</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #0f0e0d;
+    --ink2: #3d3b38;
+    --ink3: #7a7772;
+    --surface: #faf9f7;
+    --surface2: #f2f0ec;
+    --surface3: #e8e5e0;
+    --blue: #1a4fd6;
+    --blue-soft: #eef2fd;
+    --green: #15803d;
+    --green-soft: #f0fdf4;
+    --amber: #b45309;
+    --amber-soft: #fffbeb;
+    --purple: #6d28d9;
+    --purple-soft: #f5f3ff;
+    --radius: 12px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--surface);
+    color: var(--ink);
+    line-height: 1.7;
+    font-size: 16px;
+  }
+
+  /* ── Header ── */
+  .site-header {
+    background: var(--ink);
+    padding: 48px 0 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .site-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 60% 0%, rgba(26,79,214,0.25) 0%, transparent 70%),
+                radial-gradient(ellipse at 20% 100%, rgba(109,40,217,0.15) 0%, transparent 60%);
+  }
+  .header-inner { position: relative; z-index: 1; }
+  .logo-mark {
+    display: inline-flex; align-items: center; gap: 10px;
+    margin-bottom: 20px;
+  }
+  .logo-dot {
+    width: 10px; height: 10px; border-radius: 50%;
+    background: #60a5fa;
+    box-shadow: 0 0 16px rgba(96,165,250,0.6);
+  }
+  .logo-text {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px; color: #fff; letter-spacing: -0.3px;
+  }
+  .header-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(32px, 5vw, 52px);
+    color: #fff;
+    letter-spacing: -1px;
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+  .header-meta {
+    font-size: 13px; color: rgba(255,255,255,0.5);
+    letter-spacing: 0.5px;
+  }
+  .header-meta span { margin: 0 8px; }
+
+  /* ── Summary banner ── */
+  .summary-banner {
+    background: var(--green-soft);
+    border-bottom: 1px solid #bbf7d0;
+    padding: 24px 0;
+  }
+  .summary-inner {
+    max-width: 760px; margin: 0 auto; padding: 0 24px;
+  }
+  .summary-label {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 11px; font-weight: 600; letter-spacing: 1px;
+    text-transform: uppercase; color: var(--green);
+    margin-bottom: 12px;
+  }
+  .summary-label::before {
+    content: ''; width: 6px; height: 6px; border-radius: 50%;
+    background: var(--green);
+  }
+  .summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+  }
+  .summary-item {
+    display: flex; align-items: flex-start; gap: 8px;
+    font-size: 13.5px; color: var(--ink2);
+  }
+  .summary-item::before {
+    content: '✓';
+    color: var(--green); font-weight: 700;
+    flex-shrink: 0; margin-top: 1px;
+  }
+
+  /* ── Nav ── */
+  .toc-nav {
+    background: var(--surface2);
+    border-bottom: 1px solid var(--surface3);
+    padding: 14px 0;
+    position: sticky; top: 0; z-index: 100;
+  }
+  .toc-inner {
+    max-width: 760px; margin: 0 auto; padding: 0 24px;
+    display: flex; gap: 6px; flex-wrap: wrap; align-items: center;
+  }
+  .toc-label {
+    font-size: 11px; font-weight: 600; color: var(--ink3);
+    letter-spacing: 0.5px; text-transform: uppercase;
+    margin-right: 6px; flex-shrink: 0;
+  }
+  .toc-link {
+    font-size: 12px; color: var(--ink3);
+    text-decoration: none; padding: 3px 10px;
+    border-radius: 20px; border: 1px solid var(--surface3);
+    background: var(--surface); transition: all 0.15s;
+    white-space: nowrap;
+  }
+  .toc-link:hover { color: var(--blue); border-color: var(--blue); background: var(--blue-soft); }
+
+  /* ── Main layout ── */
+  .main { max-width: 760px; margin: 0 auto; padding: 48px 24px 80px; }
+
+  /* ── Sections ── */
+  .policy-section { margin-bottom: 52px; }
+  .section-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: var(--blue); font-weight: 500;
+    letter-spacing: 1px; text-transform: uppercase;
+    margin-bottom: 6px; display: block;
+  }
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 24px; color: var(--ink);
+    letter-spacing: -0.3px; margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--surface3);
+  }
+  .section-body {
+    font-size: 15px; color: var(--ink2);
+    margin-bottom: 16px; line-height: 1.75;
+  }
+
+  /* ── Info boxes ── */
+  .info-box {
+    border-radius: var(--radius);
+    padding: 18px 20px;
+    margin: 20px 0;
+    border-left: 4px solid;
+  }
+  .info-box.blue { background: var(--blue-soft); border-color: var(--blue); }
+  .info-box.green { background: var(--green-soft); border-color: var(--green); }
+  .info-box.amber { background: var(--amber-soft); border-color: var(--amber); }
+  .info-box.purple { background: var(--purple-soft); border-color: var(--purple); }
+  .info-box.gray { background: var(--surface2); border-color: var(--surface3); }
+  .info-box-title {
+    font-size: 12px; font-weight: 600; letter-spacing: 0.5px;
+    text-transform: uppercase; margin-bottom: 10px;
+  }
+  .info-box.blue .info-box-title { color: var(--blue); }
+  .info-box.green .info-box-title { color: var(--green); }
+  .info-box.amber .info-box-title { color: var(--amber); }
+  .info-box.purple .info-box-title { color: var(--purple); }
+  .info-box.gray .info-box-title { color: var(--ink3); }
+  .info-box p, .info-box li {
+    font-size: 14px; color: var(--ink2); line-height: 1.65;
+  }
+  .info-box ul { padding-left: 18px; }
+  .info-box li { margin-bottom: 4px; }
+
+  /* ── Tables ── */
+  .policy-table {
+    width: 100%; border-collapse: collapse;
+    margin: 16px 0 24px; font-size: 14px;
+    border-radius: var(--radius); overflow: hidden;
+    border: 1px solid var(--surface3);
+  }
+  .policy-table thead tr {
+    background: var(--ink); color: #fff;
+  }
+  .policy-table thead th {
+    padding: 11px 14px; text-align: left;
+    font-size: 12px; font-weight: 600;
+    letter-spacing: 0.4px;
+  }
+  .policy-table tbody tr { border-bottom: 1px solid var(--surface3); }
+  .policy-table tbody tr:last-child { border-bottom: none; }
+  .policy-table tbody tr:nth-child(even) { background: var(--surface2); }
+  .policy-table tbody td {
+    padding: 10px 14px; color: var(--ink2);
+    vertical-align: top; line-height: 1.55;
+  }
+  .policy-table tbody td:first-child { font-weight: 500; color: var(--ink); }
+
+  /* ── Bullet lists ── */
+  .policy-list {
+    padding-left: 20px; margin: 12px 0 16px;
+  }
+  .policy-list li {
+    font-size: 15px; color: var(--ink2);
+    margin-bottom: 8px; line-height: 1.65;
+  }
+  .policy-list li::marker { color: var(--blue); }
+
+  /* ── Highlight badge ── */
+  .badge {
+    display: inline-block;
+    font-size: 11px; font-weight: 600;
+    padding: 2px 8px; border-radius: 20px;
+    background: var(--blue-soft); color: var(--blue);
+    letter-spacing: 0.3px;
+  }
+
+  /* ── Not collected ── */
+  .not-collected li::marker { color: #dc2626; }
+
+  /* ── Quick ref box ── */
+  .quick-ref {
+    background: var(--ink);
+    border-radius: var(--radius);
+    padding: 28px 32px;
+    margin-top: 48px;
+  }
+  .quick-ref-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px; color: #fff; margin-bottom: 20px;
+  }
+  .quick-ref-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 14px;
+  }
+  .quick-ref-item {
+    background: rgba(255,255,255,0.07);
+    border-radius: 8px; padding: 14px 16px;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  .quick-ref-item-label {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.5px;
+    color: #60a5fa; text-transform: uppercase; margin-bottom: 6px;
+  }
+  .quick-ref-item-val {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; color: rgba(255,255,255,0.7);
+    line-height: 1.6;
+  }
+
+  /* ── Footer ── */
+  .site-footer {
+    background: var(--surface2);
+    border-top: 1px solid var(--surface3);
+    padding: 32px 24px;
+    text-align: center;
+  }
+  .footer-text { font-size: 13px; color: var(--ink3); line-height: 1.7; }
+  .footer-text a { color: var(--blue); text-decoration: none; }
+  .footer-text a:hover { text-decoration: underline; }
+
+  /* ── Responsive ── */
+  @media (max-width: 600px) {
+    .policy-table { font-size: 13px; }
+    .policy-table thead th, .policy-table tbody td { padding: 8px 10px; }
+    .quick-ref { padding: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="logo-mark">
+      <span class="logo-dot"></span>
+      <span class="logo-text">FlowMind</span>
+    </div>
+    <h1 class="header-title">Privacy Policy</h1>
+    <p class="header-meta">
+      Effective Date: May 2026
+      <span>·</span>
+      Version 1.0
+      <span>·</span>
+      Personal Productivity Platform
+    </p>
+  </div>
+</header>
+
+<!-- Summary banner -->
+<div class="summary-banner">
+  <div class="summary-inner">
+    <div class="summary-label">Plain-language summary</div>
+    <div class="summary-grid">
+      <div class="summary-item">Your messages are processed by AI to create tasks and events — not stored by FlowMind.</div>
+      <div class="summary-item">All data lives in your own Google account — not on any FlowMind server.</div>
+      <div class="summary-item">No data is sold, shared with advertisers, or used for model training.</div>
+      <div class="summary-item">You can delete everything at any time by revoking Google OAuth access.</div>
+    </div>
+  </div>
+</div>
+
+<!-- TOC Nav -->
+<nav class="toc-nav" aria-label="Table of contents">
+  <div class="toc-inner">
+    <span class="toc-label">Sections</span>
+    <a href="#s1" class="toc-link">Who We Are</a>
+    <a href="#s2" class="toc-link">Data We Collect</a>
+    <a href="#s3" class="toc-link">How We Use It</a>
+    <a href="#s4" class="toc-link">Third Parties</a>
+    <a href="#s5" class="toc-link">Storage</a>
+    <a href="#s6" class="toc-link">Security</a>
+    <a href="#s7" class="toc-link">Your Rights</a>
+    <a href="#s8" class="toc-link">WhatsApp</a>
+    <a href="#s9" class="toc-link">Children</a>
+    <a href="#s10" class="toc-link">Changes</a>
+  </div>
+</nav>
+
+<!-- Main content -->
+<main class="main">
+
+  <!-- 1. Who We Are -->
+  <section class="policy-section" id="s1">
+    <span class="section-num">Section 01</span>
+    <h2 class="section-title">Who We Are</h2>
+    <p class="section-body">
+      FlowMind is a personal productivity automation system operated by its individual user. It is not a commercial SaaS product or a company. The system is built on third-party platforms including n8n Cloud, Anthropic Claude API, Meta WhatsApp Business API, and Google Workspace APIs. Each of these platforms has its own privacy policy, which applies independently.
+    </p>
+    <p class="section-body">
+      This Privacy Policy describes how data flows through the FlowMind system, what is retained, where it is stored, and what rights you have over your information.
+    </p>
+    <div class="info-box blue">
+      <div class="info-box-title">Scope of this policy</div>
+      <p>This policy applies to data processed by the FlowMind automation system when you send WhatsApp messages to the associated business number. It does not govern the platforms FlowMind is built upon — each has its own policy linked in Section 4.</p>
+    </div>
+  </section>
+
+  <!-- 2. Data We Collect -->
+  <section class="policy-section" id="s2">
+    <span class="section-num">Section 02</span>
+    <h2 class="section-title">What Data We Collect</h2>
+    <p class="section-body">FlowMind collects and processes the following categories of data:</p>
+
+    <table class="policy-table" role="table" aria-label="Data types collected">
+      <thead>
+        <tr>
+          <th>Data type</th>
+          <th>Description</th>
+          <th>Storage</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>WhatsApp message content</td>
+          <td>Text of messages sent to the FlowMind business number</td>
+          <td>Processed in real time — not stored by FlowMind</td>
+        </tr>
+        <tr>
+          <td>Sender phone number</td>
+          <td>Your WhatsApp phone number</td>
+          <td>Used to send confirmation replies only</td>
+        </tr>
+        <tr>
+          <td>Sender name</td>
+          <td>Your WhatsApp display name</td>
+          <td>Logged in your Google Sheet</td>
+        </tr>
+        <tr>
+          <td>Message timestamp</td>
+          <td>Date and time of each message</td>
+          <td>Logged in your Google Sheet</td>
+        </tr>
+        <tr>
+          <td>AI classification output</td>
+          <td>Task title, due date, priority, classification type</td>
+          <td>Stored in your Google Tasks / Calendar / Sheet</td>
+        </tr>
+        <tr>
+          <td>Google account data</td>
+          <td>Calendar events, task lists, Gmail drafts, Drive files</td>
+          <td>Your own Google account only</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p class="section-body"><strong>FlowMind does NOT collect:</strong></p>
+    <ul class="policy-list not-collected">
+      <li>Passwords or authentication credentials (handled entirely by OAuth 2.0)</li>
+      <li>Payment information of any kind</li>
+      <li>Location data or GPS coordinates</li>
+      <li>Device identifiers or browser fingerprints</li>
+      <li>Data from contacts other than the sender of a message</li>
+      <li>Voice messages, images, or media files (text messages only)</li>
+      <li>Biometric data of any kind</li>
+    </ul>
+  </section>
+
+  <!-- 3. How We Use It -->
+  <section class="policy-section" id="s3">
+    <span class="section-num">Section 03</span>
+    <h2 class="section-title">How We Use Your Data</h2>
+    <p class="section-body">Your data is used exclusively for the following personal productivity purposes:</p>
+
+    <table class="policy-table" role="table" aria-label="Data use purposes">
+      <thead>
+        <tr>
+          <th>Purpose</th>
+          <th>How your data is used</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Task creation</td>
+          <td>Message content is classified by AI and converted into Google Tasks entries</td>
+        </tr>
+        <tr>
+          <td>Calendar scheduling</td>
+          <td>Detected events and deadlines are added to your Google Calendar</td>
+        </tr>
+        <tr>
+          <td>Email drafting</td>
+          <td>Action-required messages trigger a draft reply in your Gmail</td>
+        </tr>
+        <tr>
+          <td>Activity logging</td>
+          <td>Each processed message is logged to your private Google Sheet for your own review</td>
+        </tr>
+        <tr>
+          <td>Confirmation replies</td>
+          <td>Your phone number is used to send a WhatsApp confirmation back to you</td>
+        </tr>
+        <tr>
+          <td>Weekly review</td>
+          <td>Scheduled prompts sent to your number on Sunday evenings</td>
+        </tr>
+        <tr>
+          <td>Morning briefing</td>
+          <td>A daily summary of top tasks sent on weekday mornings</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="info-box green">
+      <div class="info-box-title">No commercial use</div>
+      <p>Your data is never used for advertising, profiling, machine learning model training, or any purpose beyond your personal productivity workflow. Data is never sold or shared with third parties for commercial gain.</p>
+    </div>
+  </section>
+
+  <!-- 4. Third Parties -->
+  <section class="policy-section" id="s4">
+    <span class="section-num">Section 04</span>
+    <h2 class="section-title">Third-Party Services</h2>
+    <p class="section-body">FlowMind is built on third-party infrastructure. The following services receive your data as part of the automation pipeline:</p>
+
+    <table class="policy-table" role="table" aria-label="Third party services">
+      <thead>
+        <tr>
+          <th>Service</th>
+          <th>Role</th>
+          <th>Data shared</th>
+          <th>Privacy Policy</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Meta (WhatsApp)</td>
+          <td>Receives and routes WhatsApp messages</td>
+          <td>Message content, phone number</td>
+          <td><a href="https://privacy.meta.com" target="_blank" rel="noopener">privacy.meta.com</a></td>
+        </tr>
+        <tr>
+          <td>n8n Cloud</td>
+          <td>Orchestrates the automation workflow</td>
+          <td>Message metadata only (not stored after execution)</td>
+          <td><a href="https://n8n.io/legal/privacy" target="_blank" rel="noopener">n8n.io/legal/privacy</a></td>
+        </tr>
+        <tr>
+          <td>Anthropic (Claude API)</td>
+          <td>Classifies message content using AI</td>
+          <td>Message text (processed, not stored)</td>
+          <td><a href="https://www.anthropic.com/privacy" target="_blank" rel="noopener">anthropic.com/privacy</a></td>
+        </tr>
+        <tr>
+          <td>Google Workspace</td>
+          <td>Stores tasks, events, drafts, and log entries</td>
+          <td>Classification output and activity log</td>
+          <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></td>
+        </tr>
+        <tr>
+          <td>Vercel</td>
+          <td>Hosts the FlowMind dashboard UI</td>
+          <td>No personal data (static UI only)</td>
+          <td><a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener">vercel.com/legal/privacy-policy</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="info-box purple">
+      <div class="info-box-title">Note on Anthropic / Claude API</div>
+      <p>Message content is sent to the Claude API for classification only. Anthropic does not store message content from API calls for model training purposes. API data is subject to Anthropic's API usage policy. See <a href="https://www.anthropic.com/privacy" target="_blank" rel="noopener">anthropic.com/privacy</a> for full details.</p>
+    </div>
+  </section>
+
+  <!-- 5. Storage -->
+  <section class="policy-section" id="s5">
+    <span class="section-num">Section 05</span>
+    <h2 class="section-title">Data Storage & Retention</h2>
+    <p class="section-body">All personal data processed by FlowMind is stored exclusively in your own Google account. FlowMind does not operate its own database or storage server.</p>
+
+    <table class="policy-table" role="table" aria-label="Data storage and retention">
+      <thead>
+        <tr>
+          <th>Data</th>
+          <th>Where stored</th>
+          <th>Retention</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Google Tasks</td>
+          <td>Your Google account</td>
+          <td>Until you delete the task</td>
+        </tr>
+        <tr>
+          <td>Google Calendar events</td>
+          <td>Your Google account</td>
+          <td>Until you delete the event</td>
+        </tr>
+        <tr>
+          <td>Gmail drafts</td>
+          <td>Your Google account</td>
+          <td>Until you delete or send the draft</td>
+        </tr>
+        <tr>
+          <td>Google Sheets log</td>
+          <td>Your Google account</td>
+          <td>Until you delete the sheet or row</td>
+        </tr>
+        <tr>
+          <td>n8n execution logs</td>
+          <td>n8n Cloud (metadata only)</td>
+          <td>Automatically deleted after 30 days</td>
+        </tr>
+        <tr>
+          <td>WhatsApp messages</td>
+          <td>Meta infrastructure</td>
+          <td>Per Meta's data retention policy</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p class="section-body">n8n Cloud stores workflow execution metadata (node names, timestamps, success/error status) for debugging purposes. Message content is explicitly excluded from n8n execution logs by the workflow configuration.</p>
+  </section>
+
+  <!-- 6. Security -->
+  <section class="policy-section" id="s6">
+    <span class="section-num">Section 06</span>
+    <h2 class="section-title">Security Measures</h2>
+
+    <table class="policy-table" role="table" aria-label="Security measures">
+      <thead>
+        <tr>
+          <th>Measure</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>OAuth 2.0</td>
+          <td>All Google API access uses OAuth 2.0 — no passwords are stored anywhere in the system</td>
+        </tr>
+        <tr>
+          <td>HMAC-SHA256 verification</td>
+          <td>Every incoming WhatsApp webhook is verified against Meta's signature before processing</td>
+        </tr>
+        <tr>
+          <td>HTTPS / TLS 1.3</td>
+          <td>All data in transit is encrypted across all platforms</td>
+        </tr>
+        <tr>
+          <td>Minimum OAuth scopes</td>
+          <td>Only specific Google permissions required are requested (tasks, calendar.events, gmail.compose, drive.file)</td>
+        </tr>
+        <tr>
+          <td>No PII in logs</td>
+          <td>Message content is excluded from n8n execution logs — only classification metadata is retained</td>
+        </tr>
+        <tr>
+          <td>Credential vault</td>
+          <td>All API keys are stored in n8n's encrypted credential store — never in source code</td>
+        </tr>
+        <tr>
+          <td>Rate limiting</td>
+          <td>Workflow processes a maximum of 10 messages per minute to prevent abuse</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 7. Your Rights -->
+  <section class="policy-section" id="s7">
+    <span class="section-num">Section 07</span>
+    <h2 class="section-title">Your Rights & Controls</h2>
+    <p class="section-body">As the operator and sole user of FlowMind, you have full control over your data. The following actions are available at any time:</p>
+
+    <table class="policy-table" role="table" aria-label="User rights">
+      <thead>
+        <tr>
+          <th>Right</th>
+          <th>How to exercise it</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Access your data</td>
+          <td>View all logged data in your Google Sheet and Google Workspace apps at any time</td>
+        </tr>
+        <tr>
+          <td>Delete your data</td>
+          <td>Delete any row in the Google Sheet, any task, event, or draft from your Google account</td>
+        </tr>
+        <tr>
+          <td>Stop processing</td>
+          <td>Deactivate the n8n workflow at any time — no further messages will be processed</td>
+        </tr>
+        <tr>
+          <td>Revoke access</td>
+          <td>Revoke FlowMind's Google OAuth access via myaccount.google.com/permissions</td>
+        </tr>
+        <tr>
+          <td>Delete everything</td>
+          <td>Delete the Google Sheet, revoke OAuth, and deactivate the workflow to remove all traces</td>
+        </tr>
+        <tr>
+          <td>Export your data</td>
+          <td>Download your Google Sheet as CSV at any time for a full activity log export</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 8. WhatsApp -->
+  <section class="policy-section" id="s8">
+    <span class="section-num">Section 08</span>
+    <h2 class="section-title">WhatsApp-Specific Terms</h2>
+    <p class="section-body">FlowMind uses the Meta WhatsApp Business Cloud API. By sending messages to the FlowMind business number, you acknowledge the following:</p>
+    <ul class="policy-list">
+      <li>Messages are processed automatically by an AI system — responses are generated by Claude AI, not a human.</li>
+      <li>Only text messages are processed. Images, voice notes, and other media are ignored.</li>
+      <li>In Development mode, only pre-verified phone numbers can interact with the system.</li>
+      <li>Meta's WhatsApp Business Policy applies to all messages sent through the platform.</li>
+      <li>You may stop using the system at any time by simply not sending further messages.</li>
+      <li>FlowMind does not send unsolicited messages. All outbound messages are direct responses or scheduled personal productivity prompts that you have opted into.</li>
+    </ul>
+
+    <div class="info-box amber">
+      <div class="info-box-title">WhatsApp Business Policy Compliance</div>
+      <ul>
+        <li>FlowMind operates as a personal productivity tool for the account owner only.</li>
+        <li>It does not send unsolicited messages (spam).</li>
+        <li>All outbound messages are direct responses or agreed-upon scheduled prompts.</li>
+        <li>Full Meta WhatsApp Business Policy: <a href="https://business.whatsapp.com/policy" target="_blank" rel="noopener">business.whatsapp.com/policy</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 9. Children -->
+  <section class="policy-section" id="s9">
+    <span class="section-num">Section 09</span>
+    <h2 class="section-title">Children's Privacy</h2>
+    <p class="section-body">FlowMind is designed for personal professional productivity use by adults. It is not intended for use by individuals under the age of 18. No data from minors is knowingly collected or processed. If you believe data from a minor has been collected, please contact the system operator immediately to request deletion.</p>
+  </section>
+
+  <!-- 10. Changes -->
+  <section class="policy-section" id="s10">
+    <span class="section-num">Section 10</span>
+    <h2 class="section-title">Changes to This Policy</h2>
+    <p class="section-body">This Privacy Policy may be updated to reflect changes in the FlowMind system, third-party service terms, or applicable law. The effective date at the top of this document will be updated with each revision.</p>
+
+    <table class="policy-table" role="table" aria-label="Version history">
+      <thead>
+        <tr>
+          <th>Version</th>
+          <th>Date</th>
+          <th>Summary</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1.0</td>
+          <td>May 2026</td>
+          <td>Initial release — covers n8n Cloud + Claude API + Google Workspace integration</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Quick reference -->
+  <div class="quick-ref">
+    <div class="quick-ref-title">Quick Control Reference</div>
+    <div class="quick-ref-grid">
+      <div class="quick-ref-item">
+        <div class="quick-ref-item-label">Stop all processing</div>
+        <div class="quick-ref-item-val">n8n → Deactivate workflow</div>
+      </div>
+      <div class="quick-ref-item">
+        <div class="quick-ref-item-label">Revoke Google access</div>
+        <div class="quick-ref-item-val">myaccount.google.com/permissions</div>
+      </div>
+      <div class="quick-ref-item">
+        <div class="quick-ref-item-label">Delete activity log</div>
+        <div class="quick-ref-item-val">Delete your FlowMind Google Sheet</div>
+      </div>
+      <div class="quick-ref-item">
+        <div class="quick-ref-item-label">Remove API keys</div>
+        <div class="quick-ref-item-val">n8n Settings → Credentials → Delete</div>
+      </div>
+      <div class="quick-ref-item">
+        <div class="quick-ref-item-label">Remove WA webhook</div>
+        <div class="quick-ref-item-val">Meta Portal → WhatsApp → Configuration → Remove subscription</div>
+      </div>
+      <div class="quick-ref-item">
+        <div class="quick-ref-item-label">Contact</div>
+        <div class="quick-ref-item-val">Via Google account associated with FlowMind project</div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <p class="footer-text">
+    FlowMind Privacy Policy &nbsp;·&nbsp; Version 1.0 &nbsp;·&nbsp; Effective May 2026<br>
+    Built on <a href="https://n8n.io" target="_blank" rel="noopener">n8n</a> &nbsp;·&nbsp;
+    <a href="https://www.anthropic.com" target="_blank" rel="noopener">Anthropic Claude</a> &nbsp;·&nbsp;
+    <a href="https://workspace.google.com" target="_blank" rel="noopener">Google Workspace</a> &nbsp;·&nbsp;
+    <a href="https://business.whatsapp.com" target="_blank" rel="noopener">WhatsApp Business</a>
+  </p>
+</footer>
+
+</body>
+</html>
